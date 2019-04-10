@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Admin page</title>
+<link rel="stylesheet" href="{{ url_for("static",filename="css/adminpage.css")}}">
+
+{% endblock %}
+
+{% block main %}
+<div class="content" role="group">
+    <a href="{{ url_for('adminalluser')}}"><button type="button" class="btn btn-secondary">All users</button></a>
+    <a href="{{ url_for('adminallorder')}}"><button type="button" class="btn btn-secondary">All orders</button></a>
+    <a href="{{ url_for('logout')}}"><button type="button" class="btn btn-secondary">Log out</button></a>
+</div>
+
+
+{% endblock %}
+
+

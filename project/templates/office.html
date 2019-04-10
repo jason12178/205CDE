@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Office cleaning service</title>
+<link rel="stylesheet" href="{{ url_for("static",filename="css/home.css")}}">
+{% endblock %}
+
+{% block main %}
+<div class="ban">	
+    <img src="{{ url_for("static",filename="images/Office cleaning 1.jpg")}}">
+    </div>
+
+    <nav class="wordstyle" style="width: 90%; margin: auto; margin-bottom: 15px;">
+    <h1>Staining and waxing service</h1>
+    <p>Our company provide a wide range of services for our commercial clients, directly-employed, well experienced and uniformed cleaning service team to perform cleaning services for office and commercial buildings. We only use environmentally safe ingredient and material.</p>
+
+<h3><b>Normal Cleaning Service</b></h3>
+<p><b>Service Scope:</b></p>
+<p>To vacuum clean carpet or non carpet area, wipe clean workstation desk and partitions, remove garbage and, replace garbage bags, wash cups, clean toilets etc.</p>
+<h3><b>Deep Cleaning Service</b></h3>
+<p><b>Service Scope:</b></p>
+<p>To wipe clean windows and partition, company logo, light tube covers, wire covers, ventilation covers, cabinets, Venetian blinds; to provide cleaning and disinfection service for telephones and office appliances, machine-cleaning for hard floor.</p>
+
+    <h6><strong>Section and Time: </strong></h6>
+    <p><b>Morning: 8:00-10:00</b></p>
+    <p><b>Afternoon: 14:00-16:00</b></p>
+    <h6><strong>Service size fee:</strong></h6>
+    <p><b>Small(&lt;500 feet): $1200</b></p>
+    <p><b>Medium(501~1000 feet): $1900</b></p>
+    <p><b>Large(1000&gt; feet): $2800</b></p>
+
+<a href="/orderpage?orderid=office"><button class="button2">order now </button></a>
+
+
+</nav>
+
+{% endblock %}

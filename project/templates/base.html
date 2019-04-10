@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+{% block head %}
+{% endblock %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename="css/base.css")}}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.ico') }}">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fix-top navbar-dark bg-warning fixed-top">
+  <a class="navbar-brand" href="{{ url_for("index")}}" style="font-size: 25px">Cleaning service</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url_for("index")}}">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navcolor" href="#" data-toggle="dropdown">Service</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="{{ url_for("home")}}">House cleaning service</a>
+          <a class="dropdown-item" href="{{ url_for("office")}}">Office cleaning service</a>
+          <a class="dropdown-item" href="{{ url_for("locust")}}">Locust cleaning service</a>
+          <a class="dropdown-item" href="{{ url_for("wax")}}">Staining and waxing service</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="navcolor" href="#">Payment</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="navcolor" href="{{ url_for("aboutus")}}">About us</a>
+      </li>
+    </ul>
+
+  {% if session['username'] %}
+  
+	<ul class="nav nav-pills">
+     <li class="nav-item">
+    <a class="nav-link" href="{{ url_for("logout")}}" style="color: #ffffff;">logout</a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link" href="#" style="color: #ffffff;" data-toggle="modal" data-target=".bd-profile-modal-sm" > {{ session['username'] }}</a>
+     </li>
+  </ul>
+  {% else %}
+
+  <ul class="nav nav-pills">
+      <li class="nav-item">
+     <a class="nav-link" href="{{ url_for("login")}}" style="color: #ffffff;">login</a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="{{ url_for("register")}}" style="color: #ffffff;">register</a>
+      </li>
+   </ul>
+
+   {% endif %}
+  </div>
+</nav>
+
+{% block main %}
+
+{% endblock %}
+
+
+
+<footer>
+  <div class="container">
+    {% if data %}
+    <div class="modal fade bd-profile-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" >Profile</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <img src="../static/{{data.photo}}" alt="..." width="50">
+              <div>User ID: {{ data.userID }}</div>
+              <div>User name: {{ data.username }}</div>
+              <div>User email: {{ data.useremail }}</div>
+              <form action="/upload_file" method="POST" enctype="multipart/form-data">
+                <label>upload photo:</label>
+                <input type="file" name="upload">
+                <button type="submit">change photo</botton>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">close</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  	<div class="row" style="margin-bottom: 100px">
+    <div class="col"><span style="font-size: 28px; font-family:Arial;">Big team</span>
+        <p>There are more than 100 staff than can provide long term and effctive service for general and special project.</p>
+    </div>
+    <div class="col"><span style="font-size: 28px; font-family:Arial;">Environment Protection</span>
+    	<p>Using the environmental friendly cleaning supplies that ensure safe services.
+    </div>
+    <div class="col"><span style="font-size: 28px; font-family:Arial;">Quickly service</span>
+    	<p>High efficiency cleaning reduce affected working hours.
+    </div>
+
+</div>
+
+</footer>
+
+
+
+</body>
+</html>

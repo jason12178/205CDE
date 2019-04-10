@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Register Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for("static",filename="css/register.css")}}">
+{% endblock %}
+{% block main %}
+<div class="container">
+    <h1><i>register Page</i></h1>
+        <div class="row" >
+            <div class="col-sm-6">
+                <div class="leftcontent">
+                    <form method="POST" action="/register">
+                        <nav class="leftinside">
+                            <h6 style='color: red; '>{% include "flashhelper.html" %}</h6>
+                            
+                            <p>Username</p>
+                            <div class="form.group">
+                                {{form.username}}
+                            </div>
+
+                            <p>True name</p>
+                            <div class ="form.group">
+                                {{form.truename}}
+                            </div>
+
+                            <p>Email</p>
+                            <div class="form.group">
+                                {{form.email}}
+                            </div>
+
+                            <p>Birthday(YYYY-MM-DD)</p>
+                            <div class="form.group">
+                                {{form.birth}}
+                            </div>
+
+                            <p>Password</p>
+                            <div class="form.group">
+                                {{form.password}}
+                            </div> 
+
+                            <p>ID Card Number</p>
+                            <div class="form.group">
+                                {{form.idcard}}
+                            </div>
+
+                            <br>{{form.recaptcha}}<br>
+
+                            <p><input type="submit" class="btn btn.primary" value="submit"
+                                style="background-color:rgb(255, 229, 80);
+                                border-style:solid;
+                                border-width: 3px;
+                                border-color:rgb(45, 210, 30);">
+                                </p>
+                        </nav>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="rightcontent">
+                    <h3>Terms</h3>
+                    <ul>
+                        <ol>1.<p>contectcontectcontectcontect</p></ol>
+                        
+                        <ol>2.<p>contectcontectcontectcontect</p></ol>
+                        
+                        <ol>3.<p>contectcontectcontectcontect</p></ol>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
+{% endblock %}

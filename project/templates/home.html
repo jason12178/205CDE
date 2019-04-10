@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Home Cleaning</title>
+    <link rel="stylesheet" href="{{ url_for("static",filename="css/home.css")}}">
+
+{% endblock %}
+
+{% block main %}
+<div class="ban">	
+    <img src="{{ url_for("static",filename="images/house cleaning 1.jpg")}}">
+    </div>
+
+
+    <nav class="wordstyle" style="width: 90%; margin: auto; margin-bottom: 15px;">
+    <h1>House cleaning service</h1>
+    <p>You may having the Deep home cleaning and disinfection services if you choose you House cleaning sercice. We ensure that all of the dust, allergen, bactergens and dust mites etc. could br remove by ou rich experience workers.</p>
+    
+    <h3><b>Service Scope</b></h3>
+    <p><b>Kitchen area:</b></p>
+    <p>refrigerator, range hood, ventilation van, cooking range, wash sink, kitchen cabinet etc.</p>
+    <p><b>Bathroom area:</b></p>
+    <p>bathtub, washbasin, toilet, mirror, ventilation van, showers etc.</p>
+    <p><b>Bedroom & hall area:</b></p>
+    <p>window, windowsill, wall, furniture, light fitting, skirting, air-conditioning filter etc.</p>
+    
+    
+    <h6><strong>Section and Time: </strong></h6>
+    <p><b>Morning: 9:00-11:00</b></p>
+    <p><b>Afternoon: 13:00-15:00</b></p>
+    <h6><strong>Service size fee:</strong></h6>
+    <p><b>Small(&lt;500 feet): $200</b></p>
+    <p><b>Medium(501~1000 feet): $500</b></p>
+    <p><b>Large(1000&gt; feet): $1200</b></p>
+    
+    <a href="/orderpage?orderid=home"><button class="button2">order now </button></a>
+    </nav>
+</div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Receipt page</title>
+<link rel="stylesheet" href="{{ url_for("static",filename="css/result.css")}}">
+
+{% endblock %}
+
+{% block main %}
+<div class="content">
+    <h1>Thank you to use Cleaning Service!</h1>
+    <h1>We hope you are satisfied with our service!</h1>
+
+    <div class="content2">
+        <table class="table">
+            <tr>
+                <th>Service type</th>
+                <td>{{ ordertype }}</td>
+            </tr>
+            <tr>
+                <th>Service detail</th>
+                <td>{{ servicedetail }}</td>
+            </tr>
+            <tr>
+                <th>size</th>
+                <td>{{ size }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ date }}</td>
+            </tr>
+            <tr>
+                <th>Section</th>
+                <td>{{ time }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ address }}</td>
+            </tr>
+            <tr>
+                <th>Order time</th>
+                <td>{{ ordertime }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ price }}</td>
+            </tr>
+            <tr>
+                <th>Pay</th>
+                <td>{{ pay }}</td>
+            </tr>
+            <tr>
+                <th>Credit card no.</th>
+                <td>{{ creditno }}</td>
+            </tr>
+            
+        </table>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

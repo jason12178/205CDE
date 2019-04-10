@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Admin page</title>
+<link rel="stylesheet" href="{{ url_for("static",filename="css/adminpage.css")}}">
+
+{% endblock %}
+
+{% block main %}
+
+<div class="content" role="group">
+        <a href="{{ url_for('adminalluser')}}"><button type="button" class="btn btn-secondary">All users</button></a>
+        <a href="{{ url_for('adminallorder')}}"><button type="button" class="btn btn-secondary">All orders</button></a>
+        <a href="{{ url_for('logout')}}"><button type="button" class="btn btn-secondary">Log out</button></a>
+</div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            {% if result %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>User Name</th>
+                        <th>True Name</th>
+                        <th>Email</th>
+                        <th>Birthday</th>
+                        <th>Password</th>
+                        <th>ID card</th>
+                        <th>Delete</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for user in result %}
+                    <tr>
+                        <td>{{user.userID}}</td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.truename}}</td>
+                        <td>{{user.useremail}}</td>
+                        <td>{{user.birthdate}}</td>
+                        <td>#####</td>
+                        <td>{{user.IDcard}}</td>
+                        <td><a href="/deluser?userid={{ user.userID }}">Delete</a></td>
+
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+
+            {% else %}
+            <h3>There are no Registered Users</h3>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

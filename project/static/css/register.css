@@ -1,0 +1,25 @@
+
+.container{
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+.rightcontent{
+    background-color: white;
+    color: rgb(212, 0, 255);
+    border-style: solid ;
+    border-color: rgb(255, 169, 88);
+    border-width: 3px;
+}
+
+.leftcontent{
+    background-color: white;
+    color: rgb(184, 20, 175);
+    border-style: solid ;
+    border-color: rgb(255, 169, 88);
+    border-width: 3px;
+}
+
+.leftinside{
+    margin: 10px 10px 10px 10px;
+}

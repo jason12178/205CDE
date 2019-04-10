@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Payment page</title>
+<link rel="stylesheet" href="{{ url_for("static",filename="css/orderpayment.css")}}">
+
+{% endblock %}
+
+{% block main %}
+<div class="content">
+    <h1>Order and Payment</h1>
+    <div class="content2">
+        <table class="table">
+            <tr>
+                <th>Service type</th>
+                <td>{{ ordertype }}</td>
+            </tr>
+            <tr>
+                <th>Service detail</th>
+                <td>{{ servicedetail }}</td>
+            </tr>
+            <tr>
+                <th>size</th>
+                <td>{{ size }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ date }}</td>
+            </tr>
+            <tr>
+                <th>Section</th>
+                <td>{{ time }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ address }}</td>
+            </tr>
+            <tr>
+                <th>Order time</th>
+                <td>{{ ordertime }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ price }}</td>
+            </tr>
+            <tr>
+                <th>Pay</th>
+                <td>{{ pay }}</td>
+            </tr>
+            <tr>
+                <th>Credit card no.</th>
+                <td>{{ creditno }}</td>
+            </tr>
+            
+        </table>
+    </div>
+
+    <p style="text-align: center;">I have read and accept the above Terms and Conditions (including the terms contained in Privacy Policy Statement and Disclaimer )Accept	Decline</p>
+
+    <form method="POST" action="/result">
+        <input type="hidden" name="ordertype" value='{{ ordertype }}'>
+        <input type="hidden" name="servicedetail" value='{{ servicedetail }}'>
+        <input type="hidden" name="size" value='{{ size }}'>
+        <input type="hidden" name="date" value='{{ date }}'>
+        <input type="hidden" name="time" value='{{ time }}'>
+        <input type="hidden" name="address" value='{{ address }}'>
+        <input type="hidden" name="ordertime" value='{{ ordertime }}'>
+        <input type="hidden" name="price" value='{{ price }}'>
+        <input type="hidden" name="pay" value='{{ pay }}'>
+        <input type="hidden" name="creditno" value='{{ creditno }}'>
+        
+        <div class="buttonstyle" style="text-align: center;">
+        <p><input type="submit" class="btn btn.primary" value="Confirm"
+        style="background-color:rgb(255, 229, 80);
+        border-style:solid;
+        border-width: 3px;
+        border-color:rgb(45, 210, 30);">
+        </p>
+        </div>
+    </form>
+</div>
+{% endblock %}

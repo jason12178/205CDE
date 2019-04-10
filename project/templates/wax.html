@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Staining and waxing service</title>
+<link rel="stylesheet" href="{{ url_for("static",filename="css/home.css")}}">
+
+{% endblock %}
+
+{% block main %}
+<div class="ban">	
+    <img src="{{ url_for("static",filename="images/Staining and waxing service 1.jpg")}}">
+    </div>
+
+    <nav class="wordstyle" style="width: 90%; margin: auto; margin-bottom: 15px;">
+    <h1>Staining and waxing service</h1>
+    <p>The floor like staining, discoloration or shining lost. mostly produced from oil, rust stains, efflorescence, cracks, potassium nitrates, scratch, etch and watermarks under natural and man-made circumstances or lack of maintenance. Our staff are kowing the floor nature that will help choose carefully the most suitable mathod to ensure a shining and long-lasting appearance of the floor.</p>
+
+    <h3><b>Tile Care & Cleaning</b></h3>
+    <p>Over time, tile floors and surfaces lose their shine and luster. Mopping do not generally yield the results needed for a deep clean.</p>
+    <p>Beyond just improving the appearance and shining of tile, It can help extend the life of floors, it also helps you avoid the expense and inconvenience of completely replacing tile floors.</p>
+
+    <h3><b>Vinyl Care & Waxing</b></h3>
+    <p>A smooth and shining floor gives you the fresh and comfortable feeling. We provide a polishing and waxing service for clients to improve their working and living environment.We uses Johnson Step Off Stripper, removing the aged wax, dirt and stains; then we use Johnson Complete Polymer wax to form a coating on the plastic floor, providing protection for the floor which is resistant to marks, scratches, stains and chemical erosion.</p>
+
+    <h6><strong>Section and Time: </strong></h6>
+    <p><b>Morning: 10:00-12:00</b></p>
+    <p><b>Afternoon: 15:00-17:00</b></p>
+    <h6><strong>Service size fee:</strong></h6>
+    <p><b>Small(&lt;500 feet): $1100</b></p>
+    <p><b>Medium(501~1000 feet): $1800</b></p>
+    <p><b>Large(1000&gt; feet): $2600</b></p>
+
+    <a href="/orderpage?orderid=wax"><button class="button2">order now </button></a>
+    </nav>
+
+{% endblock %}
+

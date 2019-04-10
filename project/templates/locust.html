@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Home Cleaning</title>
+<link rel="stylesheet" href="{{ url_for("static",filename="css/home.css")}}">
+
+{% endblock %}
+
+{% block main %}
+<div class="ban">	
+    <img src="{{ url_for("static",filename="images/Locust cleaning 1.png")}}">
+    </div>
+
+    <nav class="wordstyle" style="width: 90%; margin: auto; margin-bottom: 15px;">
+    <h1>Locust cleaning service</h1>
+    <p>We selest Green Pesticides or Biological Pesticides that find in the nature or plants to protect the envirnment and solve your locust problems without harming your office.</p>
+
+    <h3><b>Our Locust cleaning service solution as follow:</b></h3>
+    <h4><b>Spray Solution:</b></h4>
+    <p>Inject the insecticide into the sprayer. Spray the insecticide onto the carpet directly.</p>
+    <p>Main target of pests: running insects ; fleas.</p>
+    <h4><b>Fogging/Fumigation Solution:</b></h4>
+    <p>Inject the insecticide into the fogger. A fog of the insecticide will be sprayed to yhe whole area.</p>
+    <p>Main target of pests:running insects ; mosquitoes ; flies.</p>
+    <h4><b>Bait Solution:</b></h4>
+    <p>The particular insecticide gel will be placed in the infected area as the bait.</p>
+    <p>After the pest taking the bait, the group of the target will be terminated with the crossed-species infection.</p>
+    <p>Main target of pests: cockroaches ; ants ; termites ; rats.</p>
+
+    <h6><strong>Section and Time: </strong></h6>
+    <p><b>Morning: 7:00-9:00</b></p>
+    <p><b>Afternoon: 16:00-18:00</b></p>
+    <h6><strong>Service size fee:</strong></h6>
+    <p><b>Small(&lt;500 feet): $600</b></p>
+    <p><b>Medium(501~1000 feet): $1000</b></p>
+    <p><b>Large(1000&gt; feet): $2200</b></p>
+
+    <a href="/orderpage?orderid=locust"><button class="button2">order now </button></a>
+    </nav>
+    
+
+{% endblock %}
